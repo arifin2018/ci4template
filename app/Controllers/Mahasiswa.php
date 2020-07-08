@@ -8,9 +8,9 @@ class Mahasiswa extends Controller{
     
     public function index(){
         $mhs = new Modelmahasiswa(); #variable mhs,samain dengan use Modelmahasiswa,modelnya
-        $data = ['tampildata' => $mhs ->tampildata()->getResult()]; #untuk memanggil fungsi tampildata di Modelmahasiswa
-    
-        echo View('viewtampilmahasiswa',$data);
+        $data = ['tampildata' => $mhs ->tampildata()->getResult(),'isi2' => 'viewtampilmahasiswa']; #untuk memanggil fungsi tampildata di Modelmahasiswa
+        
+        echo view('layout/v_wrapper2', $data);
     }
 
     public function formtambah(){
@@ -33,7 +33,7 @@ class Mahasiswa extends Controller{
         $simpan = $mhs->simpan($data);
 
         if ($simpan) {
-            return redirect()->to('/mahasiswa/index');
+            return redirect()->to('/mahasiswa');
         }
     }
     function hapus(){
@@ -43,7 +43,7 @@ class Mahasiswa extends Controller{
         $mhs = new Modelmahasiswa();
         $mhs -> hapusdata($nim); 
 
-        return redirect()->to('/mahasiswa/index');
+        return redirect()->to('/mahasiswa');
     }
     function formedit(){
         helper('form');
@@ -82,7 +82,7 @@ class Mahasiswa extends Controller{
         $update = $mhs->editdata($data, $nim);
 
         if ($update) {
-            return redirect()->to('/mahasiswa/index');
+            return redirect()->to('/mahasiswa');
         }
     }
 }

@@ -11,13 +11,14 @@
     <title>Data Mahasiswa</title>
 </head>
 <body>
-</div>
-    <div class="jumbotron p-3 row" style="width: 101%; text-indent: 30px;">
+    <!-- Content Header (Page header) -->
+        <div class="container-fluid">
+    <div class="jumbotron p-3 row" style="width: 103%;">
         <h2 class="col">Data Mahasiswa</h2>
     <button type="button" class="btn-primary" style="border-radius: 12px;" onclick="window.location='<?php echo site_url('mahasiswa/formtambah/')?>'"> Tambah Data </button>
 </div>
 
-    <table class="table table-bordered"style="width: 93%;" align="center">
+    <table class="table table-bordered"style="width: 100%;">
         <thead>
             <tr>
                 <th>No</th>
@@ -77,5 +78,6 @@
     <script src="js/jquery-3.5.1.slim.min.js" ></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    </div><!-- /.col -->
 </body>
 </html>
