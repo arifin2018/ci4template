@@ -7,6 +7,10 @@ use App\Models\Modelmahasiswa; #untuk menguhubungkan ke Model Mahasiswa
 class Mahasiswa extends Controller{
     
     public function index(){
+        if (session()->get('email')=='') {
+			session()->setFlashdata('gagal','Anda Belum Login !!!'); 
+            return redirect()->to(base_url('login'));
+        }
         $mhs = new Modelmahasiswa(); #variable mhs,samain dengan use Modelmahasiswa,modelnya
         $data = ['tampildata' => $mhs ->tampildata()->getResult(),'isi2' => 'viewtampilmahasiswa']; #untuk memanggil fungsi tampildata di Modelmahasiswa
         

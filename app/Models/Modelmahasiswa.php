@@ -22,4 +22,5 @@ class Modelmahasiswa extends Model
         return $this->db->table('mahasiswa')->update($data, ['mhsnim' => $nim]);
     }
 }
+            
 ?>

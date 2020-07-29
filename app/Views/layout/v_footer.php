@@ -1,15 +1,11 @@
-<footer class="main-footer">
+<footer class="card-footer text-muted">
     <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-        Anything you want
-    </div>
+    <div style='text-align:left;'>
     <!-- Default to the left -->
     <strong>Copyright &copy;  2020 <a href="https://adminlte.io">NUR ARIFIN</a>.</strong> Dimiliki Hak paten Nur Arifin.
 </footer>
 </div>
 <!-- ./wrapper -->
-
-<!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
 <script src="<?= base_url() ?>/template/plugins/jquery/jquery.min.js"></script>

@@ -14,8 +14,10 @@
     <!-- Content Header (Page header) -->
         <div class="container-fluid">
     <div class="jumbotron p-3 row" style="width: 103%;">
-        <h2 class="col">Data Mahasiswa</h2>
+        <h2 class="col">Data Mahasiswa</h2><?php 
+                if (session()->get('level')==1) { ?>
     <button type="button" class="btn-primary" style="border-radius: 12px;" onclick="window.location='<?php echo site_url('mahasiswa/formtambah/')?>'"> Tambah Data </button>
+<?php } ?>
 </div>
 
     <table class="table table-bordered"style="width: 100%;">
@@ -28,7 +30,10 @@
                 <th style="text-align:center">Tempat/Tgl.lahir</th>
                 <th style="text-align:center">Alamat</th>
                 <th style="text-align:center">Telp/HP</th>
+                <?php 
+                if (session()->get('level')==1) { ?>
                 <th style="text-align:center" colspan="2">Aksi</th>
+                <?php } ?>
             </tr>
         </thead>
         <tbody>
@@ -46,12 +51,15 @@
                 <td width=40%><?= $row->mhsalamat ?></td>
                 <td width=9%><?= $row->mhstelp?></td>
                 <td width=9%>
-                    <button type="button" class="col-sm btn btn-danger col"  onclick="hapus('<?= $row->mhsnim?>')">
+                <?php 
+            if (session()->get('level')==1) { ?>
+               <button type="button" class="col-sm btn btn-danger col"  onclick="hapus('<?= $row->mhsnim?>')">
                     Hapus
                     <th><button type="button" class="col-sm btn btn-info col" onclick="edit('<?php $row->mhsnim?>')" >
                     Edit 
                     </button>
                 </th>
+            <?php } ?>
                 </div>
         </tr>
             <?php 
